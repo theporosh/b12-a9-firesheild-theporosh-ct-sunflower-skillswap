@@ -26,8 +26,7 @@ const Footer = () => {
             <li><a className="hover:text-[#9f62f2]">About</a></li>
             <li><a className="hover:text-[#9f62f2]">Skills</a></li>
             <li><a className="hover:text-[#9f62f2]">Contact</a></li>
-            <li><a className="hover:text-[#9f62f2]">theporosh@gmail.com</a></li>
-          </ul>
+           </ul>
         </nav>
 
         {/* Legal Section */}

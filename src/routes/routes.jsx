@@ -1,8 +1,12 @@
 import { createBrowserRouter } from "react-router";
 import HomeLayout from "../layout/HomeLayout";
 import Home from "../pages/Home";
-import CategorySkill from "../pages/CategorySkill";
-import Skills from "../pages/Skills";
+import SkillDetails from "../pages/SkillDetails";
+import Login from "../pages/Login";
+import SignUp from "../pages/SignUp";
+import MyProfile from "../pages/MyProfile";
+
+
 
 const router = createBrowserRouter([
     {
@@ -15,21 +19,29 @@ const router = createBrowserRouter([
                 loader: () => fetch("/skills.json"),
             },
             {
-                path: "/category/:id",
-                element: <CategorySkill></CategorySkill>,
+                path: "/skillDetails/:id",
+                element: <SkillDetails></SkillDetails>,
+                loader: () => fetch("/skills.json"),
             },
             {
-                path: "/skills",
-                element: <Skills></Skills>,
-                
+                path: "/login",
+                element: <Login></Login>,
+            },
+            {
+                path: "/signup",
+                element: <SignUp></SignUp>,
+            },
+            {
+                path: "/profile",
+                element: <MyProfile></MyProfile>,
             },
 
 
-            // { path: "/skills", element: <Skills></Skills> },
-            // { path: "/profile", element: <Profile></Profile> },
+           
+           
             // { path: "/add-skill", element: <AddSkill></AddSkill> },
-            // { path: "/login", element: <Login></Login> },
-            // { path: "/register", element: <Register></Register> },
+           
+            
         ],
     },
     {

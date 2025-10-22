@@ -27,7 +27,7 @@ const SkillsCard = ({skill}) => {
                                 </p>
                                 <div className="card-actions justify-end mt-4">
                                     <Link
-                                        to={`/skills/${skillId}`}
+                                        to={`/skillDetails/${skillId}`}
                                         className="btn bg-gradient-to-r from-[#632ee3] to-[#9f62f2] text-white border-none"
                                     >
                                         View Details
