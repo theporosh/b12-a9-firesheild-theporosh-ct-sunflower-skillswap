@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router';
-
+import user from "../assets/user.png"
 
 
 const Navbar = () => {
@@ -9,7 +9,7 @@ const Navbar = () => {
       <li><NavLink to="/">Home</NavLink></li>
       <li><NavLink to="/skills">Explore Skills</NavLink></li>
       <li><NavLink to="/add-skill">Add Skill</NavLink></li>
-      <li><NavLink to="/profile">Profile</NavLink></li>
+      <li><NavLink to="/profile">My Profile</NavLink></li>
     </>
   );
 
@@ -21,8 +21,9 @@ const Navbar = () => {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
-      <div className="navbar-end">
-        <Link to="/login" className="btn btn-primary">Login</Link>
+      <div className="navbar-end flex gap-5">
+        <img src={user} alt="" />
+        <Link to="/login" className="btn btn-neutral px-10">Login</Link>
       </div>
     </div>
   );
