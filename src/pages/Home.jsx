@@ -2,6 +2,9 @@ import HeroSection from "../components/HeroSection";
 import SkillCategory from "../components/SkillCategory";
 import { useEffect } from "react";
 import AOS from "aos";
+import Skills from "./Skills";
+import { useLoaderData } from "react-router";
+import HowItWorks from "../components/HowItWorks";
 
 
 
@@ -10,12 +13,28 @@ const Home = () => {
     AOS.init({ duration: 1000 });
   }, []);
 
+   const skills = useLoaderData();
+   console.log(skills)
+
   return (
     <div>
+        {/* Hero Slider (use Swiper */}
       <HeroSection></HeroSection>
+
+        {/* Popular Skills – Cards with */}
       <section className="py-16 bg-base-200">
-        <h2 className="text-3xl font-bold text-center mb-8">Popular Categories</h2>
+            <Skills skills={skills}></Skills>
+      </section>
+
+        {/* Top Rated Providers Section */}
+      <section className="py-16 bg-base-200">
+        <h2 className="text-3xl font-bold text-center mb-8">Top Rated Providers</h2>
         <SkillCategory></SkillCategory>
+      </section>
+
+        {/* How It Works Section */}
+      <section>
+            <HowItWorks></HowItWorks>
       </section>
     </div>
   );

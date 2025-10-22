@@ -9,11 +9,11 @@ const HomeLayout = () => {
         <div>
             <header>
                 <Header></Header>
-                <nav className="flex flex-col my-3">
+                <nav className="flex flex-col w-11/12 mx-auto my-5">
                     <Navbar></Navbar>
                 </nav>
             </header>
-            <main className="flex-1">
+            <main className="flex-1 *:border w-11/12 mx-auto">
                 <section className="main">
                     <Outlet></Outlet>
                 </section>
