@@ -6,10 +6,10 @@ import user from "../assets/user.png"
 const Navbar = () => {
   const links = (
     <>
-      <li><NavLink to="/">Home</NavLink></li>
-      <li><NavLink to="/skills">Explore Skills</NavLink></li>
-      <li><NavLink to="/add-skill">Add Skill</NavLink></li>
-      <li><NavLink to="/profile">My Profile</NavLink></li>
+      <li><NavLink className="text-green-600" to="/">Home</NavLink></li>
+      <li><NavLink className="text-green-600" to="/skills">Explore Skills</NavLink></li>
+      <li><NavLink className="text-green-600" to="/add-skill">Add Skill</NavLink></li>
+      <li><NavLink className="text-green-600" to="/profile">My Profile</NavLink></li>
     </>
   );
 
