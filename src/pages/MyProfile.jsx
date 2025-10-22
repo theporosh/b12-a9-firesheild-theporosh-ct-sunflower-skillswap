@@ -3,7 +3,7 @@ const MyProfile = () => {
     name: "John Doe",
     email: "john@example.com",
     joined: "January 2025",
-    avatar: "https://i.pravatar.cc/150?img=5",
+    avatar: "https://i.ibb.co.com/nNBzT2zv/p1.jpg",
   };
 
   return (

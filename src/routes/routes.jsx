@@ -5,6 +5,8 @@ import SkillDetails from "../pages/SkillDetails";
 import Login from "../pages/Login";
 import SignUp from "../pages/SignUp";
 import MyProfile from "../pages/MyProfile";
+import AddSkill from "../pages/AddSkill";
+
 
 
 
@@ -35,23 +37,20 @@ const router = createBrowserRouter([
                 path: "/profile",
                 element: <MyProfile></MyProfile>,
             },
+            {
+                path: "/add-skill",
+                element: <AddSkill></AddSkill>
+            },
+           
 
 
-           
-           
-            // { path: "/add-skill", element: <AddSkill></AddSkill> },
-           
-            
         ],
     },
     {
         path: "/auth",
         element: <h2>Authentication Layout</h2>,
     },
-    {
-        path: "/skills",
-        element: <h2>skill layout</h2>,
-    },
+
     {
         path: "/*",
         element: <h2>Error404</h2>,

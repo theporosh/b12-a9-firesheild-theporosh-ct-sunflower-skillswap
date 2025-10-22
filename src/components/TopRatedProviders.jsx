@@ -9,7 +9,7 @@ const TopRatedProviders = () => {
       skill: "Guitar Lessons",
       rating: 4.9,
       image:
-        "https://images.unsplash.com/photo-1603415526960-f7e0328c63b1?auto=format&fit=crop&w=800&q=80",
+        "https://i.ibb.co.com/HLBRfWY8/alex.jpg",
       students: 120,
     },
     {
@@ -18,7 +18,7 @@ const TopRatedProviders = () => {
       skill: "Home Cooking",
       rating: 4.8,
       image:
-        "https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=800&q=80",
+        "https://i.ibb.co.com/YFzx0p8G/emily.jpg",
       students: 95,
     },
     {
@@ -27,7 +27,7 @@ const TopRatedProviders = () => {
       skill: "Web Development",
       rating: 5.0,
       image:
-        "https://images.unsplash.com/photo-1599566150163-29194dcaad36?auto=format&fit=crop&w=800&q=80",
+        "https://i.ibb.co.com/GQbV23Kz/david.jpg",
       students: 140,
     },
     {
@@ -36,7 +36,7 @@ const TopRatedProviders = () => {
       skill: "Photography Basics",
       rating: 4.7,
       image:
-        "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=800&q=80",
+        "https://i.ibb.co.com/s42n8dK/nora.jpg",
       students: 88,
     },
   ];

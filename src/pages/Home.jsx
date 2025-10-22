@@ -5,6 +5,7 @@ import Skills from "./Skills";
 import { useLoaderData } from "react-router";
 import HowItWorks from "../components/HowItWorks";
 import TopRatedProviders from "../components/TopRatedProviders";
+import SuccessStories from "../components/SuccessStories";
 
 
 
@@ -34,6 +35,11 @@ const Home = () => {
         {/* How It Works Section */}
       <section>
             <HowItWorks></HowItWorks>
+      </section>
+
+        {/*extra section: SuccessStories */}
+      <section>
+         <SuccessStories></SuccessStories>
       </section>
     </div>
   );

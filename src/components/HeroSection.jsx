@@ -11,7 +11,7 @@ const HeroSection = () => {
             className="hero min-h-[80vh]"
             style={{
               backgroundImage:
-                "url('https://images.pexels.com/photos/3184299/pexels-photo-3184299.jpeg?auto=compress&cs=tinysrgb&w=1600')",
+                "url('https://i.ibb.co.com/XftydJmG/hero1.webp')",
               backgroundSize: "cover",
               backgroundPosition: "center",
             }}
@@ -23,7 +23,7 @@ const HeroSection = () => {
                 <p className="py-6">
                   Exchange your knowledge, grow your network, and master something new — all within your community!
                 </p>
-                <Link to="/skills" className="btn btn-primary">Explore Skills</Link>
+                <Link to="/" className="btn btn-primary">Explore Skills</Link>
               </div>
             </div>
           </div>
@@ -34,7 +34,7 @@ const HeroSection = () => {
             className="hero min-h-[80vh]"
             style={{
               backgroundImage:
-                "url('https://images.pexels.com/photos/3183171/pexels-photo-3183171.jpeg?auto=compress&cs=tinysrgb&w=1600')",
+                "url('https://i.ibb.co.com/qLmnpwwR/hero2.webp')",
               backgroundSize: "cover",
               backgroundPosition: "center",
             }}
