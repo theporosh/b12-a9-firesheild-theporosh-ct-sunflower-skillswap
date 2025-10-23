@@ -1,27 +1,53 @@
-import { useState } from "react";
-
+// import { useState } from "react";
 import toast from "react-hot-toast";
+import { use } from "react";
 import { Link } from "react-router";
+import { AuthContext } from "../provider/AuthProvider";
 
 const SignUp = () => {
-    const [form, setForm] = useState({
-        name: "",
-        email: "",
-        password: "",
-    });
 
-    const handleChange = (e) =>
-        setForm({ ...form, [e.target.name]: e.target.value });
+    const { createUser, setUser } = use(AuthContext);
 
-    const handleSubmit = (e) => {
+    // const [form, setForm] = useState({
+    //     name: "",
+    //     email: "",
+    //     password: "",
+    // });
+
+    // const handleChange = (e) =>
+    //     setForm({ ...form, [e.target.name]: e.target.value });
+
+    const handleRegister = (e) => {
         e.preventDefault();
-        toast.success("Account created successfully!");
+        console.log(e.target)
+        const form = e.target;
+        const name = form.name.value;
+        const email = form.email.value;
+        const photo = form.photo.value;
+        const password = form.password.value;
+
+        console.log({ name, email, photo, password });
+
+        createUser(email, password)
+            .then(result => {
+                const user = result.user;
+                // console.log(user);
+                setUser(user);
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                toast.success(errorMessage);
+            });
+
+        // toast.success("Account created successfully!");
     };
 
     return (
         <div className="max-w-md mx-auto my-10 bg-white p-8 rounded-2xl shadow">
             <h2 className="text-3xl font-bold text-center mb-6">Signup</h2>
-            <form onSubmit={handleSubmit} className="space-y-4">
+
+            <form onSubmit={handleRegister} className="space-y-4">
 
                 {/* Name */}
                 <label className="label">Name</label>
@@ -30,7 +56,7 @@ const SignUp = () => {
                     name="name"
                     placeholder="Full Name"
                     className="input input-bordered w-full"
-                    onChange={handleChange}
+                    //onChange={handleChange}
                     required
                 />
                 {/* Email */}
@@ -40,7 +66,7 @@ const SignUp = () => {
                     name="email"
                     placeholder="Email"
                     className="input input-bordered w-full"
-                    onChange={handleChange}
+                    //onChange={handleChange}
                     required
                 />
                 {/* Photo */}
@@ -50,7 +76,7 @@ const SignUp = () => {
                     name="photo"
                     placeholder="Photo-URL"
                     className="input input-bordered w-full"
-                    onChange={handleChange}
+                    //onChange={handleChange}
                     required
                 />
                 {/* Password */}
@@ -60,7 +86,7 @@ const SignUp = () => {
                     name="password"
                     placeholder="Password"
                     className="input input-bordered w-full"
-                    onChange={handleChange}
+                    //onChange={handleChange}
                     required
                 />
                 <button
