@@ -8,8 +8,7 @@ import MyProfile from "../pages/MyProfile";
 import AddSkill from "../pages/AddSkill";
 import AuthLayout from "../layout/AuthLayout";
 import PrivateRoute from "../provider/PrivateRoute";
-
-
+import Loading from "../pages/Loading";
 
 
 const router = createBrowserRouter([
@@ -21,6 +20,7 @@ const router = createBrowserRouter([
                 path: "/",
                 element: <Home></Home>,
                 loader: () => fetch("/skills.json"),
+                hydrateFallbackElement: <Loading></Loading>,
             },
             {
                 path: "/skillDetails/:id",
@@ -28,6 +28,7 @@ const router = createBrowserRouter([
                     <SkillDetails></SkillDetails>
                 </PrivateRoute>,
                 loader: () => fetch("/skills.json"),
+                hydrateFallbackElement: <Loading></Loading>,
             },
 
             {
@@ -38,8 +39,6 @@ const router = createBrowserRouter([
                 path: "/add-skill",
                 element: <AddSkill></AddSkill>
             },
-
-
 
         ],
     },

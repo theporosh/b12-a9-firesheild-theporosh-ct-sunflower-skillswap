@@ -1,7 +1,7 @@
 // import { useState } from "react";
 import toast from "react-hot-toast";
 import { use, useState } from "react";
-import { Link, useLocation, useNavigate } from "react-router";
+import { Link, useNavigate } from "react-router";
 import { AuthContext } from "../provider/AuthProvider";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 
@@ -11,7 +11,7 @@ const SignUp = () => {
 
     
     const navigate = useNavigate();
-    console.log(location);
+    //console.log(location);
 
     const [error, setError] = useState("");
     const [showPassword, setShowPassword] = useState(false);
@@ -27,7 +27,7 @@ const SignUp = () => {
 
     const handleRegister = (e) => {
         e.preventDefault();
-        console.log(e.target)
+        //console.log(e.target)
         const form = e.target;
         const name = form.name.value;
         const email = form.email.value;
@@ -47,7 +47,7 @@ const SignUp = () => {
         else {
             setError("");
         }
-        console.log({ name, email, photo, password });
+        //console.log({ name, email, photo, password });
 
         createUser(email, password)
             .then(result => {
@@ -81,7 +81,7 @@ const SignUp = () => {
         signInWithGoogle()
             .then(result => {
                 const user = result.user;
-                console.log(user);
+                //console.log(user);
                 navigate("/");
             })
             .catch(error => {

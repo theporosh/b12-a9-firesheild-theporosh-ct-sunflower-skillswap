@@ -2,20 +2,24 @@ import React from 'react';
 import Header from '../components/Header';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import { Outlet } from 'react-router';
+import { Outlet, useNavigation } from 'react-router';
+import Loading from '../pages/Loading';
+
 
 const HomeLayout = () => {
+    const { state } = useNavigation();
     return (
         <div>
             <header>
                 <Header></Header>
+                {import.meta.env.VITE_name}
                 <nav className="flex flex-col mx-auto my-5">
                     <Navbar></Navbar>
                 </nav>
             </header>
             <main className="flex-1 mx-auto">
                 <section className="main">
-                    <Outlet></Outlet>
+                    {state == "loading" ? <Loading></Loading> : <Outlet></Outlet>}
                 </section>
             </main>
             <footer>
