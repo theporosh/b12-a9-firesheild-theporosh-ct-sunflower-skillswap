@@ -7,6 +7,7 @@ import SignUp from "../pages/SignUp";
 import MyProfile from "../pages/MyProfile";
 import AddSkill from "../pages/AddSkill";
 import AuthLayout from "../layout/AuthLayout";
+import PrivateRoute from "../provider/PrivateRoute";
 
 
 
@@ -23,7 +24,9 @@ const router = createBrowserRouter([
             },
             {
                 path: "/skillDetails/:id",
-                element: <SkillDetails></SkillDetails>,
+                element: <PrivateRoute>
+                    <SkillDetails></SkillDetails>
+                </PrivateRoute>,
                 loader: () => fetch("/skills.json"),
             },
 
