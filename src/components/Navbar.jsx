@@ -2,11 +2,23 @@ import React, { use } from 'react';
 import { Link, NavLink } from 'react-router';
 import userIcon from "../assets/user.png"
 import { AuthContext } from '../provider/AuthProvider';
+import toast from 'react-hot-toast';
 
 
 const Navbar = () => {
 
-  const {user} = use(AuthContext);
+  const { user, logOut } = use(AuthContext);
+
+  const handleLogOut = () => {
+    console.log("user trying to logout");
+    logOut()
+      .then(() => {
+        toast.success("You Sign-out successful");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
 
   const links = (
     <>
@@ -30,7 +42,13 @@ const Navbar = () => {
       </div>
       <div className="navbar-end flex gap-5">
         <img src={userIcon} alt="" />
-        <Link to="/auth/login" className="btn btn-neutral px-10">Login</Link>
+
+        {user ? (
+          <button onClick={handleLogOut} className="btn btn-neutral px-10">LogOut</button>
+        ) : (
+          <Link to="/auth/login" className="btn btn-neutral px-10">Login</Link>
+        )}
+
       </div>
     </div>
   );

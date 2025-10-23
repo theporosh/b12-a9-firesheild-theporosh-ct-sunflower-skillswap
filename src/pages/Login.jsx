@@ -1,23 +1,44 @@
-import { useState } from "react";
+// import { useState } from "react";
 
 import toast from "react-hot-toast";
+import { use } from "react";
 import { Link } from "react-router";
+import { AuthContext } from "../provider/AuthProvider";
 
 const Login = () => {
-  const [form, setForm] = useState({ email: "", password: "" });
 
-  const handleChange = (e) =>
-    setForm({ ...form, [e.target.name]: e.target.value });
+  const { signIn } = use(AuthContext);
+  // const [form, setForm] = useState({ email: "", password: "" });
 
-  const handleSubmit = (e) => {
+  // const handleChange = (e) =>
+  //   setForm({ ...form, [e.target.name]: e.target.value });
+
+  const handleLogin = (e) => {
     e.preventDefault();
-    toast.success("Logged in successfully!");
+    const form = e.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    console.log({ email, password });
+    signIn(email, password)
+      .then(result => {
+        const user = result.user;
+        console.log(user);
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        toast.success(errorCode, errorMessage);
+      });
+      // toast.success("Logged in successfully!");
+
+
   };
 
   return (
     <div className="max-w-md mx-auto my-10 bg-white p-8 rounded-2xl shadow">
       <h2 className="text-3xl font-bold text-center mb-6">Login</h2>
-      <form onSubmit={handleSubmit} className="space-y-4">
+
+      <form onSubmit={handleLogin} className="space-y-4">
 
         {/* Email */}
         <label className="label">Email</label>
@@ -26,7 +47,7 @@ const Login = () => {
           name="email"
           placeholder="Email"
           className="input input-bordered w-full"
-          onChange={handleChange}
+          //onChange={handleChange}
           required
         />
 
@@ -37,7 +58,7 @@ const Login = () => {
           name="password"
           placeholder="Password"
           className="input input-bordered w-full"
-          onChange={handleChange}
+          // onChange={handleChange}
           required
         />
 
