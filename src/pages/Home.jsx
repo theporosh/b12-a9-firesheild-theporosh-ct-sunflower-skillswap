@@ -15,7 +15,7 @@ const Home = () => {
   }, []);
 
    const skills = useLoaderData();
-   console.log(skills)
+  //  console.log(skills)
 
   return (
     <div>

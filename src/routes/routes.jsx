@@ -6,6 +6,7 @@ import Login from "../pages/Login";
 import SignUp from "../pages/SignUp";
 import MyProfile from "../pages/MyProfile";
 import AddSkill from "../pages/AddSkill";
+import AuthLayout from "../layout/AuthLayout";
 
 
 
@@ -25,14 +26,7 @@ const router = createBrowserRouter([
                 element: <SkillDetails></SkillDetails>,
                 loader: () => fetch("/skills.json"),
             },
-            {
-                path: "/login",
-                element: <Login></Login>,
-            },
-            {
-                path: "/signup",
-                element: <SignUp></SignUp>,
-            },
+
             {
                 path: "/profile",
                 element: <MyProfile></MyProfile>,
@@ -41,14 +35,24 @@ const router = createBrowserRouter([
                 path: "/add-skill",
                 element: <AddSkill></AddSkill>
             },
-           
+
 
 
         ],
     },
     {
         path: "/auth",
-        element: <h2>Authentication Layout</h2>,
+        element: <AuthLayout></AuthLayout>,
+        children: [
+            {
+                path: "/auth/login",
+                element: <Login></Login>,
+            },
+            {
+                path: "/auth/signup",
+                element: <SignUp></SignUp>,
+            },
+        ]
     },
 
     {

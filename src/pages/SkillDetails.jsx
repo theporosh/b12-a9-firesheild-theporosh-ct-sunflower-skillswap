@@ -7,6 +7,7 @@ import toast, { Toaster } from "react-hot-toast";
 
 const SkillDetails = () => {
   const { id } = useParams();
+  console.log(id)
   const skills = useLoaderData();
 
   // Find the specific skill by ID

@@ -1,22 +1,22 @@
+
 import React from 'react';
-import Header from '../components/Header';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { Outlet } from 'react-router';
 
-const HomeLayout = () => {
+const AuthLayout = () => {
     return (
-        <div>
+        <div className="bg-base-200 min-h-screen">
             <header>
-                <Header></Header>
+               
                 <nav className="flex flex-col mx-auto my-5">
                     <Navbar></Navbar>
                 </nav>
             </header>
-            <main className="flex-1 mx-auto">
-                <section className="main">
-                    <Outlet></Outlet>
-                </section>
+            <main className="flex-1 w-11/12 mx-auto">
+                
+                   <Outlet></Outlet>
+                
             </main>
             <footer>
                 <Footer></Footer>
@@ -25,4 +25,4 @@ const HomeLayout = () => {
     );
 };
 
-export default HomeLayout;
+export default AuthLayout;

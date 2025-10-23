@@ -1,13 +1,17 @@
-import React from 'react';
+import React, { use } from 'react';
 import { Link, NavLink } from 'react-router';
-import user from "../assets/user.png"
+import userIcon from "../assets/user.png"
+import { AuthContext } from '../provider/AuthProvider';
 
 
 const Navbar = () => {
+
+  const {user} = use(AuthContext);
+
   const links = (
     <>
       <li><NavLink className="text-green-600" to="/">Home</NavLink></li>
-      <li><NavLink className="text-green-600" to="/">Explore Skills</NavLink></li>
+      {/* <li><NavLink className="text-green-600" to="">Explore Skills</NavLink></li> */}
       <li><NavLink className="text-green-600" to="/add-skill">Add Skill</NavLink></li>
       <li><NavLink className="text-green-600" to="/profile">My Profile</NavLink></li>
     </>
@@ -15,6 +19,9 @@ const Navbar = () => {
 
   return (
     <div className="navbar bg-base-100 shadow-md px-4">
+
+      <div className="">{user && user.email}</div>
+
       <div className="navbar-start">
         <Link to="/" className="text-2xl font-bold text-primary">SkillSwap</Link>
       </div>
@@ -22,8 +29,8 @@ const Navbar = () => {
         <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
       <div className="navbar-end flex gap-5">
-        <img src={user} alt="" />
-        <Link to="/login" className="btn btn-neutral px-10">Login</Link>
+        <img src={userIcon} alt="" />
+        <Link to="/auth/login" className="btn btn-neutral px-10">Login</Link>
       </div>
     </div>
   );
