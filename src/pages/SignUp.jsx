@@ -1,13 +1,18 @@
 // import { useState } from "react";
 import toast from "react-hot-toast";
-import { use } from "react";
-import { Link } from "react-router";
+import { use, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../provider/AuthProvider";
 
 const SignUp = () => {
 
     const { createUser, setUser } = use(AuthContext);
 
+    const location = useLocation();
+  const navigate = useNavigate();
+  console.log(location);
+
+  const [passwordError, setPasswordError] = useState("");
     // const [form, setForm] = useState({
     //     name: "",
     //     email: "",
@@ -26,6 +31,19 @@ const SignUp = () => {
         const photo = form.photo.value;
         const password = form.password.value;
 
+        const lengthPattern = /^.{6,}$/;
+        const casePattern = /^(?=.*[a-z])(?=.*[A-Z]).+$/;
+        if(!lengthPattern.test(password)){
+            setPasswordError("Password Length must be at least 6 character")
+            return;
+        }
+        else if(!casePattern.test(password)){
+            setPasswordError("Password Must have an Uppercase letter and a Lowercase letter")
+            return;
+        }
+        else{
+            setPasswordError("");
+        } 
         console.log({ name, email, photo, password });
 
         createUser(email, password)
@@ -33,6 +51,7 @@ const SignUp = () => {
                 const user = result.user;
                 // console.log(user);
                 setUser(user);
+                navigate(`${location.state? location.state : "/"}`);
             })
             .catch((error) => {
                 // const errorCode = error.code;
@@ -89,6 +108,8 @@ const SignUp = () => {
                     //onChange={handleChange}
                     required
                 />
+                {passwordError && <p className="text-xs text-error">{passwordError}</p>}
+
                 <button
                     type="submit"
                     className="btn w-full bg-gradient-to-r from-[#632ee3] to-[#9f62f2] text-white border-none"

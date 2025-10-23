@@ -1,13 +1,17 @@
 // import { useState } from "react";
 
 import toast from "react-hot-toast";
-import { use } from "react";
-import { Link } from "react-router";
+import { use, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../provider/AuthProvider";
 
 const Login = () => {
 
+  const [error, setError] = useState("");
   const { signIn } = use(AuthContext);
+  const location = useLocation();
+  const navigate = useNavigate();
+  console.log(location);
   // const [form, setForm] = useState({ email: "", password: "" });
 
   // const handleChange = (e) =>
@@ -23,13 +27,16 @@ const Login = () => {
       .then(result => {
         const user = result.user;
         console.log(user);
+        navigate(`${location.state? location.state : "/"}`);
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        toast.success(errorCode, errorMessage);
+        // alert(errorMessage);
+        setError(errorCode);
+        toast.success(errorMessage);
       });
-      // toast.success("Logged in successfully!");
+    // toast.success("Logged in successfully!");
 
 
   };
@@ -63,6 +70,10 @@ const Login = () => {
         />
 
         <div><a className="link link-hover">Forgot password?</a></div>
+
+        {
+          error && <p className="text-red-400 text-xs">{error}</p>
+        }
 
         <button
           type="submit"
