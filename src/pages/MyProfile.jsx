@@ -19,6 +19,7 @@ const MyProfile = () => {
         <p className="mt-2 text-sm text-gray-400">
           Joined {user.joined}
         </p>
+        <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg xl:btn-xl btn-primary my-3">Update Profile</button>
       </div>
     </div>
   );

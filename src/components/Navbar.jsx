@@ -41,8 +41,18 @@ const Navbar = () => {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
-      <div className="navbar-end flex gap-5">
-        <img src={userIcon} alt="" />
+      <div className="navbar-end flex items-center gap-5">
+
+      
+          <div className="tooltip tooltip-bottom" data-tip={user ? user.displayName : "Guest"}>
+            <img
+              className="w-12 h-12 rounded-full border-2 border-[#632ee3] cursor-pointer"
+              src={user ? user.photoURL : userIcon}
+              alt="User"
+            />
+          </div>
+  
+
 
         {user ? (
           <button onClick={handleLogOut} className="btn btn-neutral px-10">LogOut</button>
