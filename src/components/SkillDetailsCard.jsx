@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import AOS from "aos";
 import "aos/dist/aos.css";
 import toast, { Toaster } from "react-hot-toast";
-import { Link } from 'react-router';
+
 
 const SkillDetailsCard = ({ skill }) => {
 
@@ -114,7 +114,7 @@ const SkillDetailsCard = ({ skill }) => {
                         </form>
                     </div>
                 </div>
-             </div>
+            </div>
         </div>
     );
 };
