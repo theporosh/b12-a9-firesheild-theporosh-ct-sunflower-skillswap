@@ -9,6 +9,7 @@ import AddSkill from "../pages/AddSkill";
 import AuthLayout from "../layout/AuthLayout";
 import PrivateRoute from "../provider/PrivateRoute";
 import Loading from "../pages/Loading";
+import ForgetPassword from "../components/ForgetPassword";
 
 
 const router = createBrowserRouter([
@@ -53,6 +54,10 @@ const router = createBrowserRouter([
             {
                 path: "/auth/signup",
                 element: <SignUp></SignUp>,
+            },
+            {
+                path: "/auth/forgot-password",
+                element: <ForgetPassword></ForgetPassword>,
             },
         ]
     },

@@ -1,7 +1,5 @@
-// import { useState } from "react";
-
 import toast from "react-hot-toast";
-import { use, useState } from "react";
+import { use, useRef, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../provider/AuthProvider";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
@@ -10,15 +8,15 @@ const Login = () => {
 
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState("");
+  const [emailValue, setEmailValue] = useState(""); // state declare
 
-  const { signIn, signInWithGoogle } = use(AuthContext);
+  
+  const { signIn, signInWithGoogle } = use(AuthContext); 
 
   const location = useLocation();
   const navigate = useNavigate();
-  //console.log(location);
-  // const [form, setForm] = useState({ email: "", password: "" });
-
-  // const handleChange = (e) =>
+  
+// const handleChange = (e) =>
   //   setForm({ ...form, [e.target.name]: e.target.value });
 
   const handleLogin = (e) => {
@@ -77,7 +75,7 @@ const Login = () => {
           name="email"
           placeholder="Email"
           className="input input-bordered w-full"
-          //onChange={handleChange}
+          onChange={(e) => setEmailValue(e.target.value)} // store email
           required
         />
 
@@ -99,7 +97,18 @@ const Login = () => {
           </button>
         </div>
 
-        <div><a className="link link-hover">Forgot password?</a></div>
+
+       {/* Forgot password link */}
+        <div>
+          <Link
+            to={`/auth/forgot-password?email=${encodeURIComponent(emailValue)}`}
+            className="link link-hover text-sm text-[#632ee3]"
+          >
+            Forgot password?
+          </Link>
+        </div>
+
+
 
         {
           error && <p className="text-red-400 text-xs">{error}</p>
