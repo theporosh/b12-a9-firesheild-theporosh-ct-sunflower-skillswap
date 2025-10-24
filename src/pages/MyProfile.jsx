@@ -3,6 +3,7 @@ import { AuthContext } from "../provider/AuthProvider";
 import toast from "react-hot-toast";
 
 const MyProfile = () => {
+  
   const { user, updateUser, setUser } = useContext(AuthContext);
   const [isEditing, setIsEditing] = useState(false);
 
@@ -91,7 +92,7 @@ const MyProfile = () => {
               <button type="submit" className="btn btn-primary">
                 Save Changes
               </button>
-              
+
               <button
                 type="button"
                 onClick={() => setIsEditing(false)}

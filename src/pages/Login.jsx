@@ -1,14 +1,15 @@
 import toast from "react-hot-toast";
-import { use, useRef, useState } from "react";
+import { use, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../provider/AuthProvider";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Login = () => {
 
+  // state declare
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState("");
-  const [emailValue, setEmailValue] = useState(""); // state declare
+  const [emailValue, setEmailValue] = useState(""); 
 
   
   const { signIn, signInWithGoogle } = use(AuthContext); 
@@ -16,8 +17,6 @@ const Login = () => {
   const location = useLocation();
   const navigate = useNavigate();
   
-// const handleChange = (e) =>
-  //   setForm({ ...form, [e.target.name]: e.target.value });
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -30,6 +29,8 @@ const Login = () => {
         const user = result.user;
         //console.log(user);
         navigate(`${location.state ? location.state : "/"}`);
+        toast.success("Logged in successfully!");
+
       })
       .catch((error) => {
         const errorCode = error.code;
@@ -38,8 +39,7 @@ const Login = () => {
         setError(errorCode);
         toast.success(errorMessage);
       });
-    // toast.success("Logged in successfully!");
-
+    
   };
 
   const handleTogglePasswordShow = (e) => {
@@ -87,7 +87,6 @@ const Login = () => {
             name="password"
             placeholder="Password"
             className="input input-bordered w-full"
-            //onChange={handleChange}
             required
           />
           <button

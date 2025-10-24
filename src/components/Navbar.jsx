@@ -24,7 +24,7 @@ const Navbar = () => {
   return (
     <div className="navbar bg-base-100 shadow-md px-4 sticky top-0 z-50">
 
-      <div className="">{user && user.email}</div>
+      {/* <div className="">{user && user.email}</div> */}
 
       {/* Left side (Logo + Dropdown on mobile) */}
       <div className="navbar-start">

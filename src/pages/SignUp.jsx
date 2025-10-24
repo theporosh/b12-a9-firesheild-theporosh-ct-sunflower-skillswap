@@ -1,4 +1,3 @@
-// import { useState } from "react";
 import toast from "react-hot-toast";
 import { use, useState } from "react";
 import { Link, useNavigate } from "react-router";
@@ -9,21 +8,12 @@ const SignUp = () => {
 
     const { createUser, setUser, signInWithGoogle, updateUser } = use(AuthContext);
 
-    
     const navigate = useNavigate();
     //console.log(location);
 
     const [error, setError] = useState("");
     const [showPassword, setShowPassword] = useState(false);
 
-    // const [form, setForm] = useState({
-    //     name: "",
-    //     email: "",
-    //     password: "",
-    // });
-
-    // const handleChange = (e) =>
-    //     setForm({ ...form, [e.target.name]: e.target.value });
 
     const handleRegister = (e) => {
         e.preventDefault();
@@ -56,12 +46,13 @@ const SignUp = () => {
                 updateUser({ displayName: name, photoURL: photo }).then(() => {
                     setUser({ ...user, displayName: name, photoURL: photo });
                     navigate("/");
+                    toast.success("Account created successfully!");
                 })
                     .catch((error) => {
                         console.log(error);
                         setUser(user);
                     });
-                
+
             })
             .catch((error) => {
                 // const errorCode = error.code;
@@ -69,7 +60,7 @@ const SignUp = () => {
                 toast.success(errorMessage);
             });
 
-        // toast.success("Account created successfully!");
+
     };
 
     const handleTogglePasswordShow = (e) => {
@@ -105,7 +96,6 @@ const SignUp = () => {
                     name="name"
                     placeholder="Full Name"
                     className="input input-bordered w-full"
-                    //onChange={handleChange}
                     required
                 />
                 {/* Email */}
@@ -115,7 +105,6 @@ const SignUp = () => {
                     name="email"
                     placeholder="Email"
                     className="input input-bordered w-full"
-                    //onChange={handleChange}
                     required
                 />
                 {/* Photo */}
@@ -125,7 +114,6 @@ const SignUp = () => {
                     name="photo"
                     placeholder="Photo-URL"
                     className="input input-bordered w-full"
-                    //onChange={handleChange}
                     required
                 />
 
@@ -137,7 +125,6 @@ const SignUp = () => {
                         name="password"
                         placeholder="Password"
                         className="input input-bordered w-full"
-                        //onChange={handleChange}
                         required
                     />
                     <button
