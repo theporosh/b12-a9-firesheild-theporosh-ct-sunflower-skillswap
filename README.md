@@ -1,16 +1,23 @@
-# React + Vite
+## Project name : b12-a9-firesheild-theporosh-ct-sunflower-skillswap
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+ ### purpose : An interactive platform for individuals to offer, learn, and trade skills within their local area. Whether it’s guitar lessons, language exchange, coding help, or yoga training — users can browse listings, rate experiences, and connect with local skill providers.
 
-Currently, two official plugins are available:
+ ### live URL: https://b12-a9-firesheild-theporosh-sk.web.app
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+ ### key features: In this skillswap app you can learn many skill 
+ 1. Beginner Guitar Lessons
+ 2. Spoken English Practice
+ 3. Home Cooking Masterclass
+ 4. Full-Stack Web Development
+ 5. Personal Fitness Coaching
+ 6. Photography Basics
+ 
+ ## user can registration login and booking a skill with his interest. Also there is add skill option if he want to lear more skill. My profile section user can see his profile and can update his profile.
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+ ### npm package
+ 1. AOS Package
+ 2. Swiper
+ 3. React hot toast
+ 4. React Icons
+ 5. date-fns
+ 
