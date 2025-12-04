@@ -42,7 +42,7 @@ const TopRatedProviders = () => {
   ];
 
   return (
-    <section className="py-16 bg-base-100">
+    <section className="py-6 bg-base-100">
       <div className="text-center mb-12" data-aos="fade-up">
         <h2 className="text-4xl font-bold mb-4 text-gray-800">
           Top Rated Providers

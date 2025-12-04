@@ -23,12 +23,12 @@ const Home = () => {
       <HeroSection></HeroSection>
 
         {/* Popular Skills – Cards with */}
-      <section className="py-16 bg-base-200">
+      <section className="py-10 bg-base-200">
             <Skills skills={skills}></Skills>
       </section>
 
         {/* Top Rated Providers Section */}
-      <section className="py-16 bg-base-200">
+      <section className="py-10 bg-base-200">
         <TopRatedProviders></TopRatedProviders>
       </section>
 

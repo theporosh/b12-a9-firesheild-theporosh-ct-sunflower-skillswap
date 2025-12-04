@@ -70,5 +70,29 @@
         "description": "Understand the fundamentals of photography — composition, lighting, and camera settings — to capture stunning images.",
         "image": "https://i.ibb.co.com/Hf8NmrMN/photography.jpg",
         "category": "Art"
+    },
+    {
+        "skillId": 7,
+        "skillName": "Digital Marketing & SEO Basics",
+        "providerName": "Michael Turner",
+        "providerEmail": "michael@skillswap.com",
+        "price": 22,
+        "rating": 4.7,
+        "slotsAvailable": 4,
+        "description": "Learn essential digital marketing skills including SEO, social media strategy, and content optimization to grow any online presence.",
+        "image": "https://i.ibb.co.com/ZRMvcY47/mon7.jpg",
+        "category": "Marketing"
+    },
+    {
+        "skillId": 8,
+        "skillName": "Drawing & Sketching Fundamentals",
+        "providerName": "Sophia Lane",
+        "providerEmail": "sophia@skillswap.com",
+        "price": 12,
+        "rating": 4.5,
+        "slotsAvailable": 6,
+        "description": "A beginner-friendly guide to drawing with proper proportions, shading, shapes, and sketching techniques — perfect for aspiring artists.",
+        "image": "https://i.ibb.co.com/N64NpnMC/dr.jpg",
+        "category": "Art"
     }
 ]
