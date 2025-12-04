@@ -28,9 +28,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "/skillDetails/:id",
-                element: <PrivateRoute>
-                    <SkillDetails></SkillDetails>
-                </PrivateRoute>,
+                element: <SkillDetails></SkillDetails>,
                 loader: () => fetch("/skills.json"),
                 hydrateFallbackElement: <Loading></Loading>,
             },
