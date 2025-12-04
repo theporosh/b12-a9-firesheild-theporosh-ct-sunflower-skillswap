@@ -1,5 +1,5 @@
 import React from "react";
-import { FaUserPlus, FaBookOpen, FaHandshake } from "react-icons/fa";
+import { FaUserPlus, FaBookOpen, FaHandshake, FaStar } from "react-icons/fa";
 
 const HowItWorks = () => {
   const steps = [
@@ -24,6 +24,13 @@ const HowItWorks = () => {
       description:
         "Request a session or accept one. Exchange skills, learn something new, and grow your community.",
     },
+    {
+      id: 4,
+      icon: <FaStar className="text-5xl text-yellow-500 mb-4" />,
+      title: "4. Share Your Experience",
+      description:
+        "Leave a review and help others discover great learning partners while growing the SkillSwap community.",
+    },
   ];
 
   return (
@@ -38,7 +45,7 @@ const HowItWorks = () => {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-10 w-11/12 mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-10 w-11/12 mx-auto">
         {steps.map((step) => (
           <div
             key={step.id}
