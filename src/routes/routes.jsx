@@ -11,6 +11,8 @@ import PrivateRoute from "../provider/PrivateRoute";
 import Loading from "../pages/Loading";
 import ForgetPassword from "../components/ForgetPassword";
 import ErrorPage from "../components/ErrorPage";
+import AboutUs from "../components/AboutUs";
+import Support from "../pages/Support";
 
 
 const router = createBrowserRouter([
@@ -36,6 +38,14 @@ const router = createBrowserRouter([
             {
                 path: "/profile",
                 element: <MyProfile></MyProfile>,
+            },
+            {
+                path: "/aboutUs",
+                element: <AboutUs></AboutUs>,
+            },
+            {
+                path: "/support",
+                element: <Support></Support>,
             },
             {
                 path: "/add-skill",

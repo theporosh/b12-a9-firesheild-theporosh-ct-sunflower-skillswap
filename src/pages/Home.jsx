@@ -20,7 +20,9 @@ const Home = () => {
   return (
     <div>
         {/* Hero Slider (use Swiper */}
-      <HeroSection></HeroSection>
+      <div className="pt-8">
+        <HeroSection></HeroSection>
+      </div>
 
         {/* Popular Skills – Cards with */}
       <section className="py-10 bg-base-200">

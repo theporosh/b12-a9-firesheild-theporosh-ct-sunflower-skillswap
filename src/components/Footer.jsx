@@ -44,15 +44,15 @@ const Footer = () => {
           <h6 className="text-lg font-semibold mb-3">Social</h6>
           <div className="flex justify-center md:justify-start gap-5">
             {/* Twitter */}
-            <a className="hover:text-[#9f62f2] transition-colors">
+            <a href="/" className="hover:text-[#9f62f2] transition-colors">
              <FaXTwitter />
             </a>
             {/* YouTube */}
-            <a className="hover:text-[#9f62f2] transition-colors">
+            <a href="/" className="hover:text-[#9f62f2] transition-colors">
               <FaYoutube />
             </a>
             {/* Facebook */}
-            <a className="hover:text-[#9f62f2] transition-colors">
+            <a href="/" className="hover:text-[#9f62f2] transition-colors">
               <FaFacebook />
             </a>
           </div>
