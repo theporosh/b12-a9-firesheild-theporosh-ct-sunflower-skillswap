@@ -30,6 +30,15 @@ const SuccessStories = () => {
       quote:
         "Thanks to SkillSwap, I discovered a passion for photography! The one-on-one sessions made it easy to learn at my own pace.",
     },
+    {
+      id: 4,
+      name: "Daniel Carter",
+      skillLearned: "Digital Illustration",
+      image:
+        "https://i.ibb.co.com/8LJt3nXQ/ss.webp",
+      quote:
+        "Through SkillSwap, I exchanged fitness coaching for digital art lessons. Now I can create my own illustrations — something I never imagined I’d be able to do!",
+    },
   ];
 
   return (
@@ -44,7 +53,7 @@ const SuccessStories = () => {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-11/12 mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-8 w-11/12 mx-auto">
         {stories.map((story) => (
           <div
             key={story.id}

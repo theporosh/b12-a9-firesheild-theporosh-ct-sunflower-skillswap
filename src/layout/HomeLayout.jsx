@@ -11,7 +11,7 @@ const HomeLayout = () => {
     return (
         <div>
             <header>
-                <Header></Header>
+                {/* <Header></Header> */}
                 {import.meta.env.VITE_name}
                 <nav className="flex flex-col mx-auto my-5">
                     <Navbar></Navbar>
